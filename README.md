@@ -1,2 +1,2 @@
-# sandy-docs
+# SANDY Docs
 SANDY documentation
