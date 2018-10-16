@@ -24,7 +24,7 @@ Produce the files in output directory ``U238_outputs``.
 
 .. code::
 
-	sandy  sandy/data/U8/u238.endf  --mf 34  --max-polyomial 2  --outdir U238_outputs  --samples 100
+	sandy  sandy/data/U8/u238.endf  --mf 34  --max-polynomial 2  --outdir U238_outputs  --samples 100
 
 	
 Exercise 3
