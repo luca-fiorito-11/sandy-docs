@@ -5,8 +5,3 @@ install:
   - pip install sphinx sphinx_rtd_theme
 script:
   - make html
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  keep-history: true
