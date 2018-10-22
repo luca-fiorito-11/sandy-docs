@@ -5,3 +5,9 @@ install:
   - pip install sphinx sphinx_rtd_theme
 script:
   - make html
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  on:
+    branch: master
