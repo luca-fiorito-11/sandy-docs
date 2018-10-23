@@ -7,11 +7,12 @@ branches:
 install:
   - pip install sphinx sphinx_rtd_theme
 script:
-  - make html
+  - sphinx-build . _build/html -b html
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
+  local-dir: "_build/html"
   keep-history: true
   on:
     all_branches: true
