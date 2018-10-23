@@ -1,6 +1,9 @@
 language: python
 python:
   - "3.6"
+branches:
+  only:
+    - master
 install:
   - pip install sphinx sphinx_rtd_theme
 script:
@@ -8,6 +11,7 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
+  github-token: $GITHUB_TOKEN
   keep-history: true
   on:
-    branch: master
+    branch: gh-pages
