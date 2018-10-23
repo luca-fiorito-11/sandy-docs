@@ -7,7 +7,7 @@ branches:
 install:
   - pip install sphinx sphinx_rtd_theme
 script:
-  - sphinx-build _source _build/html -b html
+  - make html
 deploy:
   provider: pages
   skip-cleanup: true

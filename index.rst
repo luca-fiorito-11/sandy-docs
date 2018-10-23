@@ -17,8 +17,9 @@ Welcome to SANDY's documentation!
    uncertainty_propagation
    exercises
 
-.. Indices and tables
-   ==================
-    * :ref:`genindex`
-    * :ref:`modindex`
-    * :ref:`search`
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
