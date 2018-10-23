@@ -1,0 +1,207 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Introduction &#8212; SANDY  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting started" href="installation.html" />
+    <link rel="prev" title="Welcome to SANDY’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="preface">
+<h2>Preface<a class="headerlink" href="#preface" title="Permalink to this headline">¶</a></h2>
+<p>Nuclear data are widely considered as one of the largest sources of uncertainty
+for several kinds of reactor analyses, including rector criticality and safety.
+As a consequence, already several years ago the nuclear data evaluators have
+taken up the initiative to provide nuclear data uncertainty estimates that
+describe our data knowledge in terms of best fit to experimental measurements.
+Recently, nuclear models uncertainties were also included to provide for missing
+experimental information.
+All these quantites were included as covariance matrices into public
+evaluations along with their corresponding nuclear data.
+Also, the standard format ENDF-6 used to store nuclear data into computer
+readable files was adjusted to accept the new covariance information.</p>
+<p>As a second step, algorithms to assess linear sensitivity measures to nuclear
+data were implemented for a few neutron transport codes and mostly for
+<span class="math">\text{k}_{eff}</span>.
+The resulting sensitivies could be used to propagate nuclear data covariances
+making use of perturbation theory or generalized perturbation theory (GPT).</p>
+<p>Several shortcomings were identified for this technology:</p>
+<blockquote>
+<div><ul class="simple">
+<li>sensitivities can only be calculated with few specific codes;</li>
+<li>perturbation theory and GPT are often cumbersome to implement for models
+other than criticality;</li>
+<li>calculations become too constraining for a large number of selected
+responses;</li>
+<li>sometimes a linear surrogate does not correctly represent the physical model.</li>
+</ul>
+</div></blockquote>
+<p>Consequently, several research institutes started investigating a different
+approach to propagate nuclear data covariances based on nuclear data sampling.
+In this sense, some codes were developed to produce <em>random</em> nuclear data
+files with perturbed data.
+However, again several limitations were found, since at least one of the
+following drawbacks was experienced:</p>
+<blockquote>
+<div><ul class="simple">
+<li>only few nuclear data types were considered (mostly only cross sections);</li>
+<li>the process was specific to a single transport code, either by the nuclear
+data format or by the direct implementation of the sampling algorithms
+in the code routines;</li>
+<li>the sampling algorithm did not apply to continuous-energy data;</li>
+<li>the sampling did not use the information stored in the covariance sections
+of the evaluated file.</li>
+</ul>
+</div></blockquote>
+<p>With these restrictions in mind, we set up the objective of developing a new
+nuclear data sampling code that would not be bounded by such constraints.
+As a results, the SANDY code was created.</p>
+</div>
+<div class="section" id="what-is-sandy">
+<h2>What is SANDY?<a class="headerlink" href="#what-is-sandy" title="Permalink to this headline">¶</a></h2>
+<p>SANDY is a python package that can read, write and perform a set of operations
+on nuclear data files in ENDF-6 format.
+Its primay objective, as it was originally conceived, is to
+produce perturbed nuclear data files containing sampled parameters that
+represent the information stored in the evaluated nuclear data covariances.
+Such files can be ultimately used to propagate uncertainties through any given
+compatible system using a brute force technique.</p>
+<p>To parse ENDF-6 files, collect nuclear data, build covariance matrices,
+draw samples from probability distribution and perform other nuclear data-related
+tasks, a high-level <code class="docutils literal notranslate"><span class="pre">python</span></code> interface was created.</p>
+<p>Currently, SANDY can draw samples for:</p>
+<blockquote>
+<div><ul class="simple">
+<li>cross sections;</li>
+<li>angular distrbutions of outgoing particles;</li>
+<li>energy distrbutions of outgoing particles;</li>
+<li>fission neutron multiplicities.</li>
+</ul>
+</div></blockquote>
+<p>SANDY strongly relies on the work of the nuclear data evaluators as it draws
+random nuclear data samples from the covariance matrices that are located in
+the ENDF-6 files.
+However, the ENDF-6 files do not provide information on the nuclear data
+probability distribution functions (PDF).
+As an assumption, SANDY samples from a multivariate Normal PDF.</p>
+<p>The outputs of SANDY are sets of <em>perturbed</em> ENDF-6 format files that can be
+used for brute force uncertainty propagation. This methodology to propagate
+uncertainties can be applied to any model, response or computer code, as long
+as they are compatible with ENDF-6 format files, either directly or via data
+conversion.
+Also, the perturbed files are not constrained by any implicit effect due
+to processing, such as multigroup assumptions, self shielding or temperature
+effects.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">SANDY</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preface">Preface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-sandy">What is SANDY?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="endf6.html">The ENDF-6 format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theory.html">Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uncertainty_propagation.html">Uncertainty propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">Exercises</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to SANDY’s documentation!</a></li>
+      <li>Next: <a href="installation.html" title="next chapter">Getting started</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Luca Fiorito.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/introduction.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
