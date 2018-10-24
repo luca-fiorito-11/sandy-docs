@@ -14,5 +14,6 @@ deploy:
   github-token: $GITHUB_TOKEN
   local-dir: "_build/html"
   keep-history: true
+  overwrite: true
   on:
-    all_branches: true
+    branch: master
