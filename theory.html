@@ -176,10 +176,10 @@
 <p>To describe the sampling methodology implemented in SANDY we introduce some
 assumptions with the purpose of simplifying the explanation.
 Let us assume that a given ENDF-6 file contains only one covariance matrix
-<span class="math">\Sigma</span> that:</p>
+<span class="math notranslate nohighlight">\(\Sigma\)</span> that:</p>
 <blockquote>
 <div><ul class="simple">
-<li>is defined over <span class="math">M</span> energy groups;</li>
+<li>is defined over <span class="math notranslate nohighlight">\(M\)</span> energy groups;</li>
 <li>is in relative units;</li>
 <li>is representative for a continuous energy data type, say, cross section.</li>
 </ul>
@@ -187,54 +187,54 @@ Let us assume that a given ENDF-6 file contains only one covariance matrix
 <p>No loss of generality follows by imposing this assumptions as it happens that
 they apply to almost all the covariances allowed by the ENDF-6 format.</p>
 <p>SANDY parses the ENDF-6 file, it extracts the covariance matrix and constructs
-a multivariate Normal distribution <span class="math">N(0,\Sigma)</span>.
+a multivariate Normal distribution <span class="math notranslate nohighlight">\(N(0,\Sigma)\)</span>.
 To sample from a multivariate Normal distribution, first we must
-draw a matrix <span class="math">X</span> of <span class="math">m</span> independent and identically <span class="math">N(0,1)</span>
-distributed variables <span class="math">x=[x_1, x_2, \dots, x_m]</span>.</p>
-<div class="math" id="equation-x-samples">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-x-samples" title="Permalink to this equation">¶</a></span><span class="math">X=\begin{bmatrix}
+draw a matrix <span class="math notranslate nohighlight">\(X\)</span> of <span class="math notranslate nohighlight">\(m\)</span> independent and identically <span class="math notranslate nohighlight">\(N(0,1)\)</span>
+distributed variables <span class="math notranslate nohighlight">\(x=[x_1, x_2, \dots, x_m]\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-x-samples">
+<span class="eqno">(1)<a class="headerlink" href="#equation-x-samples" title="Permalink to this equation">¶</a></span>\[\begin{split}X=\begin{bmatrix}
  x_1^{(1)} &amp; x_1^{(2)} &amp; ... &amp; x_1^{(n)} \\
  x_2^{(1)} &amp; x_2^{(2)} &amp; ... &amp; x_2^{(n)} \\
  \vdots    &amp; \vdots    &amp; \ddots &amp; \vdots \\
  x_m^{(1)} &amp; x_m^{(2)} &amp; ... &amp; x_m^{(n)} \\
-\end{bmatrix}\,,</span></p>
-</div><p>where <span class="math">n</span> is the number of samples.</p>
-<p>Then, we define a linear operator <span class="math">L</span> that, when applied to
-uncorrelated standard samples <span class="math">X</span>, converts them into
-<span class="math">N(0,\Sigma)</span>-distributed samples <span class="math">K</span>.</p>
-<div class="math">
-<p><span class="math">K = L X
-\label{eq:corr_eq}</span></p>
-</div><p>The operator <span class="math">L</span> does not affect the mean of the distribution, since</p>
-<div class="math" id="equation-preserve-mean">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-preserve-mean" title="Permalink to this equation">¶</a></span><span class="math">E \left[ K \right] = E \left[ L X \right] = L E \left[ X \right] = 0 \,.</span></p>
-</div><p>Also, the linearity of the operator preserves the shape of the distribution.</p>
+\end{bmatrix}\,,\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the number of samples.</p>
+<p>Then, we define a linear operator <span class="math notranslate nohighlight">\(L\)</span> that, when applied to
+uncorrelated standard samples <span class="math notranslate nohighlight">\(X\)</span>, converts them into
+<span class="math notranslate nohighlight">\(N(0,\Sigma)\)</span>-distributed samples <span class="math notranslate nohighlight">\(K\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[K = L X
+\label{eq:corr_eq}\]</div>
+<p>The operator <span class="math notranslate nohighlight">\(L\)</span> does not affect the mean of the distribution, since</p>
+<div class="math notranslate nohighlight" id="equation-preserve-mean">
+<span class="eqno">(2)<a class="headerlink" href="#equation-preserve-mean" title="Permalink to this equation">¶</a></span>\[E \left[ K \right] = E \left[ L X \right] = L E \left[ X \right] = 0 \,.\]</div>
+<p>Also, the linearity of the operator preserves the shape of the distribution.</p>
 <p>Then, the covariance becomes</p>
-<div class="math" id="equation-preserve-cov">
-<p><span class="eqno">(3)<a class="headerlink" href="#equation-preserve-cov" title="Permalink to this equation">¶</a></span><span class="math">E \left[ K K^T \right] =
+<div class="math notranslate nohighlight" id="equation-preserve-cov">
+<span class="eqno">(3)<a class="headerlink" href="#equation-preserve-cov" title="Permalink to this equation">¶</a></span>\[E \left[ K K^T \right] =
 E \left[ \left( L X \right) \left( L X \right)^T \right] =
 L E \left[ X X^T \right] L^T =
-L L^T \,,</span></p>
-</div><p>since by definition <span class="math">E \left[ X X ^T \right]</span> is the identity matrix.</p>
+L L^T \,,\]</div>
+<p>since by definition <span class="math notranslate nohighlight">\(E \left[ X X ^T \right]\)</span> is the identity matrix.</p>
 <p>The problem of sampling Normally distributed variables with covariance matrix
-<span class="math">\Sigma</span> reduces to finding <span class="math">L</span> such that</p>
-<div class="math" id="equation-chol-condition">
-<p><span class="eqno">(4)<a class="headerlink" href="#equation-chol-condition" title="Permalink to this equation">¶</a></span><span class="math">L L^T = \Sigma \,.</span></p>
-</div><p>SANDY calculates <span class="math">L</span> by performing an eigendecomposition of
-<span class="math">\Sigma</span>.</p>
-<p>Eventually, <span class="math">K</span> can be converted into a <span class="math">N(1,\Sigma)</span>-distributed
-matrix of perturbation coefficients <span class="math">P</span> by shifting the distribution mean
-to the unit vector <span class="math">1</span></p>
-<div class="math" id="equation-p-samples">
-<p><span class="eqno">(5)<a class="headerlink" href="#equation-p-samples" title="Permalink to this equation">¶</a></span><span class="math">P =
+<span class="math notranslate nohighlight">\(\Sigma\)</span> reduces to finding <span class="math notranslate nohighlight">\(L\)</span> such that</p>
+<div class="math notranslate nohighlight" id="equation-chol-condition">
+<span class="eqno">(4)<a class="headerlink" href="#equation-chol-condition" title="Permalink to this equation">¶</a></span>\[L L^T = \Sigma \,.\]</div>
+<p>SANDY calculates <span class="math notranslate nohighlight">\(L\)</span> by performing an eigendecomposition of
+<span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
+<p>Eventually, <span class="math notranslate nohighlight">\(K\)</span> can be converted into a <span class="math notranslate nohighlight">\(N(1,\Sigma)\)</span>-distributed
+matrix of perturbation coefficients <span class="math notranslate nohighlight">\(P\)</span> by shifting the distribution mean
+to the unit vector <span class="math notranslate nohighlight">\(1\)</span></p>
+<div class="math notranslate nohighlight" id="equation-p-samples">
+<span class="eqno">(5)<a class="headerlink" href="#equation-p-samples" title="Permalink to this equation">¶</a></span>\[\begin{split}P =
 \begin{bmatrix}
 p_1^{(1)} &amp; p_1^{(2)} &amp; ... &amp; p_1^{(n)} \\
 p_2^{(1)} &amp; p_2^{(2)} &amp; ... &amp; p_2^{(n)} \\
 \vdots    &amp; \vdots    &amp; \ddots &amp; \vdots \\
 p_m^{(1)} &amp; p_m^{(2)} &amp; ... &amp; p_m^{(n)} \\
 \end{bmatrix} =
-K + 1 \,.</span></p>
-</div><div class="section" id="negative-eigenvalues">
+K + 1 \,.\end{split}\]</div>
+<div class="section" id="negative-eigenvalues">
 <h3>Negative eigenvalues<a class="headerlink" href="#negative-eigenvalues" title="Permalink to this headline">¶</a></h3>
 <p>By definition, covariance matrices are positive-definite, that is, their
 eigenvalues are all positive.
@@ -243,10 +243,10 @@ However, it is not rare to find covariance matrices for which it is not the case
 <p>SANDY cannot investigate into the covariance evaluation process to
 identify the sources of this issue.
 Therefore, it reconstructs an approximate covariance matrix
-<span class="math">\widetilde{\Sigma}</span> with all negative eigenvalues set to zero.
+<span class="math notranslate nohighlight">\(\widetilde{\Sigma}\)</span> with all negative eigenvalues set to zero.
 This assumption is acceptable for small negative eigenvalues that are likely
 to sprout from round-off or truncation processes.
-For such cases it follows that <span class="math">\widetilde{\Sigma} \approx \Sigma</span>.</p>
+For such cases it follows that <span class="math notranslate nohighlight">\(\widetilde{\Sigma} \approx \Sigma\)</span>.</p>
 <p>To check whether the covariance eigenvalues are well represented by the
 perturbations, option <code class="docutils literal notranslate"><span class="pre">--eig</span></code> was implemented in SANDY.</p>
 <div class="admonition hint">
@@ -260,20 +260,20 @@ perturbations, option <code class="docutils literal notranslate"><span class="pr
 </div>
 <div class="section" id="how-to-apply-multigroup-perturbations-to-continuous-energy-data">
 <h3>How to apply multigroup perturbations to continuous-energy data<a class="headerlink" href="#how-to-apply-multigroup-perturbations-to-continuous-energy-data" title="Permalink to this headline">¶</a></h3>
-<p>SANDY perturbation coefficients <span class="math">P</span> reflect the multigroup energy structure
+<p>SANDY perturbation coefficients <span class="math notranslate nohighlight">\(P\)</span> reflect the multigroup energy structure
 of the covariance matrix used for sampling.
 On the contrary, the tabulated data in the ENDF-6 files are not defined for a energy
 group structure, but they rather apply to a continuous-energy domain using a number of
-explicitely given energy-value pairs <span class="math">(e_k,v_k)</span> and interpolation laws.</p>
-<p>For any given coefficient <span class="math">p_i^{(j)}</span> defined over an energy group
-<span class="math">[e_i,e_{i+1}]</span>, SANDY perturbs all energy-value pairs
-<span class="math">(e_k,v_k)</span> for which <span class="math">e_i \leq e_k \leq e_{i+1}]</span> using the
+explicitely given energy-value pairs <span class="math notranslate nohighlight">\((e_k,v_k)\)</span> and interpolation laws.</p>
+<p>For any given coefficient <span class="math notranslate nohighlight">\(p_i^{(j)}\)</span> defined over an energy group
+<span class="math notranslate nohighlight">\([e_i,e_{i+1}]\)</span>, SANDY perturbs all energy-value pairs
+<span class="math notranslate nohighlight">\((e_k,v_k)\)</span> for which <span class="math notranslate nohighlight">\(e_i \leq e_k \leq e_{i+1}]\)</span> using the
 following formula</p>
-<div class="math">
-<p><span class="math">v_k^{(j)} = v_k p_i^{(j)} \,.</span></p>
-</div><p>That is, if a cross section must be perturbed by 10% between 1 and 10 eV,
+<div class="math notranslate nohighlight">
+\[v_k^{(j)} = v_k p_i^{(j)} \,.\]</div>
+<p>That is, if a cross section must be perturbed by 10% between 1 and 10 eV,
 then all the values of the energy-value pairs in the corresponding <code class="docutils literal notranslate"><span class="pre">MF3</span></code>
-section are multiplied by <span class="math">0.1</span>.</p>
+section are multiplied by <span class="math notranslate nohighlight">\(0.1\)</span>.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">This procedure implies that all cross section points in the energy interval
@@ -288,7 +288,7 @@ for energies below 1 KeV.</p>
 <div class="section" id="how-to-handle-negative-samples">
 <h3>How to handle negative samples<a class="headerlink" href="#how-to-handle-negative-samples" title="Permalink to this headline">¶</a></h3>
 <p>When sampling from a Normal distribution, and in particular when the standard
-deviations are large, it is likely to draw perturbation <span class="math">&lt;=0</span> that, when
+deviations are large, it is likely to draw perturbation <span class="math notranslate nohighlight">\(&lt;=0\)</span> that, when
 applied to the evaluated data they will make them change sign.
 Physically, many quantities such as cross sections or energy ditributions are
 intrinsically positive.
@@ -296,12 +296,12 @@ As a consequence, SANDY proposes two methods to handle negative perurbations:</p
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>method 1:</dt>
-<dd>perturbation coefficients outside the range <span class="math">[0,2]</span> are set to 1;</dd>
+<dd>perturbation coefficients outside the range <span class="math notranslate nohighlight">\([0,2]\)</span> are set to 1;</dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>method 2:</dt>
-<dd>perturbation coefficients outside the range <span class="math">[0,2]</span> are set either to 0 or 2 if they fall respectively below or above the defined range.</dd>
+<dd>perturbation coefficients outside the range <span class="math notranslate nohighlight">\([0,2]\)</span> are set either to 0 or 2 if they fall respectively below or above the defined range.</dd>
 </dl>
 </li>
 </ul>
