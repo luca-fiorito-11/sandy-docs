@@ -8,11 +8,6 @@ propagation using sets of perturbed files generated with SANDY.
 
 Monte Carlo uncertainty propagation
 ===================================
-It is common to refer with the term *Monte Carlo uncertainty propagation* to 
-computational approaches that rely on repeated calculation of a quantity 
-:math:`y`, each time varying the input data randomly according to a given 
-multivariate PDF.
-
 It is common to refer with the term *Monte Carlo* to computational approaches 
 that rely on a repeated random sampling of chosen parameters to obtain 
 statistical outcomes of selected responses.
