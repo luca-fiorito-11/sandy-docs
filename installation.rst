@@ -34,6 +34,12 @@ SANDY has been developed and tested on a Ubuntu machine.
 Installation
 ============
 
+To download SANDY, move to the folder where you want the source code and type
+
+```git
+git clone https://github.com/luca-fiorito-11/sandy.git
+```
+
 To install SANDY, run the following commands
 
 .. code:: bash
