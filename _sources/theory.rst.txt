@@ -240,7 +240,7 @@ the components equals the redundant cross section.
 
 .. important:: by imposing conservation laws such as summation rules, extra 
                levels of correlations are forced upon the random samples, 
-			   which might not be present in the original covariances.
+               which might not be present in the original covariances.
 
 
 
