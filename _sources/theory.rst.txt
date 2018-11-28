@@ -196,7 +196,7 @@ the ``MF33`` section in the original ENDF-6 file.
 	sandy  <pendf_file>  --cov <endf6_file>  --samples 100  --mf 33
 
 By doing so, the user must be aware that the covariance information for the 
-resonance region might not be included, if the dedicated section ``MF32`` is 
+resonance region will not be included, if the dedicated section ``MF32`` is 
 provided.
 
 If that is the case, another choice to properly include both ``MF32`` and 
@@ -214,6 +214,9 @@ If that is the case, another choice to properly include both ``MF32`` and
 The ERRORR output contains a derived ``MF33`` sections that includes 
 both the cross sections and resonance parameters covariances.
 
+.. Note:: This is the preferred methodology used by the authors to produce perturbed files
+	  with SANDY.
+	
 A template NJOY input file to produce a ERRORR output file is reported 
 below.
 
