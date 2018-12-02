@@ -56,7 +56,7 @@ What is SANDY?
 ==============
 SANDY is a python package that can read, write and perform a set of operations 
 on nuclear data files in ENDF-6 format.
-Its primay objective, as it was originally conceived, is to 
+Its primary objective is to 
 produce perturbed nuclear data files containing sampled parameters that 
 represent the information stored in the evaluated nuclear data covariances.
 Such files can be ultimately used to propagate uncertainties through any given 
