@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Extract the eigenvalues of a cross section covariance matrix &mdash; SANDY  documentation</title>
+  <title>Ptyhon API for nuclear data files &mdash; SANDY  documentation</title>
   
 
   
@@ -27,7 +27,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Exercises" href="exercises.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -77,13 +78,17 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="endf6.html">The ENDF-6 format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theory.html">Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uncertainty_propagation.html">Uncertainty propagation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercises.html">Exercises</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ptyhon API for nuclear data files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -129,13 +134,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Extract the eigenvalues of a cross section covariance matrix</li>
+      <li>Ptyhon API for nuclear data files</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/eigenvalues.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -148,28 +153,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="extract-the-eigenvalues-of-a-cross-section-covariance-matrix">
-<h1>Extract the eigenvalues of a cross section covariance matrix<a class="headerlink" href="#extract-the-eigenvalues-of-a-cross-section-covariance-matrix" title="Permalink to this headline">¶</a></h1>
-<p>Generate 100 perturbed copies of the PENDF file <code class="docutils literal notranslate"><span class="pre">sandy/data/U5/u235.pendf</span></code>
-using the covariance data stored in the ERRORR file <code class="docutils literal notranslate"><span class="pre">sandy/data/U5/u235.errorr</span></code>.
-Perturb only the fission cross section.
-Produce the files in output directory <code class="docutils literal notranslate"><span class="pre">U235_outputs</span></code>.
-Print the first 20 eigenvalues.</p>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sandy</span> <span class="k">import</span> <span class="n">XsCov</span><span class="p">,</span> <span class="n">Endf6</span>
-<span class="n">tape</span> <span class="o">=</span> <span class="n">Endf6</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;&lt;FILE&gt;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">mflist</span><span class="o">=</span><span class="p">[</span><span class="mi">33</span><span class="p">])</span>
-<span class="n">cov</span> <span class="o">=</span> <span class="n">XsCov</span><span class="o">.</span><span class="n">from_endf6</span><span class="p">(</span><span class="n">tape</span><span class="p">)</span>
-<span class="n">eigs</span> <span class="o">=</span> <span class="n">cov</span><span class="o">.</span><span class="n">to_matrix</span><span class="p">()</span><span class="o">.</span><span class="n">eig</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eigs</span><span class="o">.</span><span class="n">to_screen</span><span class="p">())</span>
-
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matpltolib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eigs</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">eigs</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;eigenvalues&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
+  <div class="section" id="ptyhon-api-for-nuclear-data-files">
+<h1>Ptyhon API for nuclear data files<a class="headerlink" href="#ptyhon-api-for-nuclear-data-files" title="Permalink to this headline">¶</a></h1>
+<p>SANDY includes a Python API that allows parsing formatted files, analyzing and performin a series
+of operations on the different nuclear data types available.
+Cross sections, neutron multiplicities, angular and energy ditributions, fission yields and the
+respective covariance data can be stored in user-friedly <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.
+Each dataframe is customized to provide additional functions that are inherent to each
+specific data type.</p>
+<p>The Python API documentation is available <a class="reference external" href="https://luca-fiorito-11.github.io/sandy">here</a>.</p>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Below is reported a list of examples where SANDY and its Python API are used to perform different
+operations:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://gist.github.com/ad352e80b01f81fe12599c079f7cb9d7.git">extract and plot eigenvalues from cross sections/nubar covariance matrix</a></li>
+</ul>
 </div>
 </div>
 
@@ -178,6 +177,13 @@ Print the first 20 eigenvalues.</p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="exercises.html" class="btn btn-neutral" title="Exercises" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
