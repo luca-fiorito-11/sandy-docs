@@ -16,6 +16,7 @@ Welcome to SANDY's documentation!
    theory
    uncertainty_propagation
    exercises
+   api
 
 Indices and tables
 ==================
