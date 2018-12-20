@@ -20,8 +20,8 @@ local machine for development and testing purposes.
 Prerequisites
 =============
 
-SANDY is developed in ``python3`` and does not support ``python2``.
-In order to run SANDY, make sure that you have a version of ``python3`` installed.
+SANDY is developed in ``python3.6`` and does not support ``python2``.
+In order to run SANDY, make sure that you have a version of ``python >= 3.6`` installed.
 In file ``requirements.txt`` you can find the python dependencies required to ensure 
 the correct functioning of SANDY.
 
@@ -36,9 +36,10 @@ Installation
 
 To download SANDY, move to the folder where you want the source code and type
 
-```git
-git clone https://github.com/luca-fiorito-11/sandy.git
-```
+.. code:: bash
+
+    git clone https://github.com/luca-fiorito-11/sandy.git
+
 
 To install SANDY, run the following commands
 
@@ -47,8 +48,6 @@ To install SANDY, run the following commands
     cd sandy
     python setup.py install
 
-Make sure that :bash:`python` points to a correct ``python3`` version for which 
-you have administration rights.
 
 
 
