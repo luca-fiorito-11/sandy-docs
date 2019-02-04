@@ -124,7 +124,7 @@ explicitely given energy-value pairs :math:`(e_k,v_k)` and interpolation laws.
 
 For any given coefficient :math:`p_i^{(j)}` defined over an energy group 
 :math:`[e_i,e_{i+1}]`, SANDY perturbs all energy-value pairs 
-:math:`(e_k,v_k)` for which :math:`e_i \leq e_k \leq e_{i+1}]` using the 
+:math:`(e_k,v_k)` for which :math:`e_i \leq e_k \leq e_{i+1}` using the 
 following formula
 
 .. math::
@@ -132,7 +132,7 @@ following formula
 
 That is, if a cross section must be perturbed by 10% between 1 and 10 eV,
 then all the values of the energy-value pairs in the corresponding ``MF3`` 
-section are multiplied by :math:`0.1`.
+section are multiplied by :math:`1.1`.
 
 .. important::
 	This procedure implies that all cross section points in the energy interval 
