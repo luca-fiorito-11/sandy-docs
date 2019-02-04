@@ -148,8 +148,8 @@ for energies below 1 KeV.
 How to handle negative samples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When sampling from a Normal distribution, and in particular when the standard 
-deviations are large, it is likely to draw perturbation :math:`<=0` that, when 
-applied to the evaluated data they will make them change sign.
+deviations are large, it is likely to draw perturbations :math:`<=0` that, when 
+applied to the evaluated data, they will make them change sign.
 Physically, many quantities such as cross sections or energy ditributions are 
 intrinsically positive.
 As a consequence, SANDY proposes two methods to handle negative perurbations:
