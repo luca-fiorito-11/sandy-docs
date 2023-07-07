@@ -4,36 +4,29 @@ Exercises
 
 Exercise 1
 ==========
-Generate 100 perturbed copies of the PENDF file ``sandy/data/U5/u235.pendf`` 
-using the covariance data stored in the ERRORR file ``sandy/data/U5/u235.errorr``.
-Perturb only the fission cross section.
-Produce the files in output directory ``U235_outputs``.
-Print the first 20 eigenvalues.
+Generate 200 perturbed ACE files from the JEFF-3.3 evaluation for U-235 in file ``u235.jeff33``.
+Use 20 CPUs and post-process each file at a temperature of 300 K. 
+Perturb both cross sections and fission yields.
+
 
 .. code::
 
-	sandy  sandy/data/U5/u235.pendf  --cov sandy/data/U5/u235.errorr  --outdir U235_outputs  --samples 100  --mt 18
+	python -m sandy.sampling  u235.jeff33  --samples 200 --processes 20 --temperatures 300  --acer
 	
 
 Exercise 2
 ==========
-Generate 100 perturbed copies of the ENDF-6 file ``sandy/data/U5/u238.endf``.
-Perturb only the angular distributions for Legendre polynomial coefficients 
-of order lower than 3.
-Produce the files in output directory ``U238_outputs``.
+Generate 5 perturbed copies of the ENDF-6 file ``pu239.endf80``.
+Use 1 CPU and do not produce the ACE files, but only perturbed ENDF-6 and PENDF files.
+Perturb both cross sections and fission yields.
 
 .. code::
 
-	sandy  sandy/data/U8/u238.endf  --mf 34  --max-polynomial 2  --outdir U238_outputs  --samples 100
+	python -m sandy.sampling  pu239.endfb80  --samples 5
 
-	
-Exercise 3
-==========
-Generate 100 perturbed copies of the ENDF-6 file ``sandy/data/Pu9/pu239.endf``.
-Perturb only the prompt fission neutron spectrum and multiplicity.
-Produce the files in output directory ``Pu239_outputs``.
-Give each file a prefix ``pu9_PFNS_NU``
 
-.. code::
+More info
+=========
+	For more flexibility on the generation of random file, see this example_.
 
-	sandy  sandy/data/Pu9/pu239.endf  --mf 31 35  --outdir Pu239_outputs  --outname pu9_PFNS_NU  --samples 100
+.. _example: https://github.com/luca-fiorito-11/sandy/blob/v1.0/notebooks/notebook_random_files.ipynb
