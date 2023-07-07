@@ -1,0 +1,31 @@
+name: API docs deployment
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.x"
+      - name: install general python dependencies
+        run: pip install sphinx sphinx_rtd_theme
+      - name: make docs
+        run: sphinx-build . _build/html -b html
+      - name: Pushes to another repository
+        id: push_directory
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: _build/html
+          destination-github-username: 'luca-fiorito-11'
+          destination-repository-name: 'sandy-docs'
+          user-email: lucafiorito.11@gmail.com
+          commit-message: pushing docs...
+          target-branch: gh-pages
