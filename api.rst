@@ -10,12 +10,3 @@ Each dataframe is customized to provide additional functions that are inherent t
 specific data type.
 
 The Python API documentation is available `here <https://luca-fiorito-11.github.io/sandy>`_.
-
-
-Examples
-========
-
-Below is reported a list of examples where SANDY and its Python API are used to perform different 
-operations:
-
-- `extract and plot eigenvalues from cross sections/nubar covariance matrix <https://gist.github.com/ad352e80b01f81fe12599c079f7cb9d7.git>`_
