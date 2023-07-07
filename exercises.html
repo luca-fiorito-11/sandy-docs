@@ -51,7 +51,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Exercises</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#exercise-1">Exercise 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exercise-2">Exercise 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#exercise-3">Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#more-info">More info</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Ptyhon API for nuclear data files</a></li>
@@ -85,34 +85,27 @@
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h1>
 <section id="exercise-1">
 <h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading"></a></h2>
-<p>Generate 100 perturbed copies of the PENDF file <code class="docutils literal notranslate"><span class="pre">sandy/data/U5/u235.pendf</span></code>
-using the covariance data stored in the ERRORR file <code class="docutils literal notranslate"><span class="pre">sandy/data/U5/u235.errorr</span></code>.
-Perturb only the fission cross section.
-Produce the files in output directory <code class="docutils literal notranslate"><span class="pre">U235_outputs</span></code>.
-Print the first 20 eigenvalues.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sandy</span>  <span class="n">sandy</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">U5</span><span class="o">/</span><span class="n">u235</span><span class="o">.</span><span class="n">pendf</span>  <span class="o">--</span><span class="n">cov</span> <span class="n">sandy</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">U5</span><span class="o">/</span><span class="n">u235</span><span class="o">.</span><span class="n">errorr</span>  <span class="o">--</span><span class="n">outdir</span> <span class="n">U235_outputs</span>  <span class="o">--</span><span class="n">samples</span> <span class="mi">100</span>  <span class="o">--</span><span class="n">mt</span> <span class="mi">18</span>
+<p>Generate 200 perturbed ACE files from the JEFF-3.3 evaluation for U-235 in file <code class="docutils literal notranslate"><span class="pre">u235.jeff33</span></code>.
+Use 20 CPUs and post-process each file at a temperature of 300 K.
+Perturb both cross sections and fission yields.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sandy</span><span class="o">.</span><span class="n">sampling</span>  <span class="n">u235</span><span class="o">.</span><span class="n">jeff33</span>  <span class="o">--</span><span class="n">samples</span> <span class="mi">200</span> <span class="o">--</span><span class="n">processes</span> <span class="mi">20</span> <span class="o">--</span><span class="n">temperatures</span> <span class="mi">300</span>  <span class="o">--</span><span class="n">acer</span>
 </pre></div>
 </div>
 </section>
 <section id="exercise-2">
 <h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading"></a></h2>
-<p>Generate 100 perturbed copies of the ENDF-6 file <code class="docutils literal notranslate"><span class="pre">sandy/data/U5/u238.endf</span></code>.
-Perturb only the angular distributions for Legendre polynomial coefficients
-of order lower than 3.
-Produce the files in output directory <code class="docutils literal notranslate"><span class="pre">U238_outputs</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sandy</span>  <span class="n">sandy</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">U8</span><span class="o">/</span><span class="n">u238</span><span class="o">.</span><span class="n">endf</span>  <span class="o">--</span><span class="n">mf</span> <span class="mi">34</span>  <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">polynomial</span> <span class="mi">2</span>  <span class="o">--</span><span class="n">outdir</span> <span class="n">U238_outputs</span>  <span class="o">--</span><span class="n">samples</span> <span class="mi">100</span>
+<p>Generate 5 perturbed copies of the ENDF-6 file <code class="docutils literal notranslate"><span class="pre">pu239.endf80</span></code>.
+Use 1 CPU and do not produce the ACE files, but only perturbed ENDF-6 and PENDF files.
+Perturb both cross sections and fission yields.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sandy</span><span class="o">.</span><span class="n">sampling</span>  <span class="n">pu239</span><span class="o">.</span><span class="n">endfb80</span>  <span class="o">--</span><span class="n">samples</span> <span class="mi">5</span>
 </pre></div>
 </div>
 </section>
-<section id="exercise-3">
-<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading"></a></h2>
-<p>Generate 100 perturbed copies of the ENDF-6 file <code class="docutils literal notranslate"><span class="pre">sandy/data/Pu9/pu239.endf</span></code>.
-Perturb only the prompt fission neutron spectrum and multiplicity.
-Produce the files in output directory <code class="docutils literal notranslate"><span class="pre">Pu239_outputs</span></code>.
-Give each file a prefix <code class="docutils literal notranslate"><span class="pre">pu9_PFNS_NU</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sandy</span>  <span class="n">sandy</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">Pu9</span><span class="o">/</span><span class="n">pu239</span><span class="o">.</span><span class="n">endf</span>  <span class="o">--</span><span class="n">mf</span> <span class="mi">31</span> <span class="mi">35</span>  <span class="o">--</span><span class="n">outdir</span> <span class="n">Pu239_outputs</span>  <span class="o">--</span><span class="n">outname</span> <span class="n">pu9_PFNS_NU</span>  <span class="o">--</span><span class="n">samples</span> <span class="mi">100</span>
-</pre></div>
-</div>
+<section id="more-info">
+<h2>More info<a class="headerlink" href="#more-info" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><p>For more flexibility on the generation of random file, see this <a class="reference external" href="https://github.com/luca-fiorito-11/sandy/blob/v1.0/notebooks/notebook_random_files.ipynb">example</a>.</p>
+</div></blockquote>
 </section>
 </section>
 
