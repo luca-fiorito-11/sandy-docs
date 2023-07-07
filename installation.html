@@ -1,100 +1,48 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Getting started &mdash; SANDY  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="The ENDF-6 format" href="endf6.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+        <div class="wy-side-nav-search" >
 
           
-            <a href="index.html" class="icon icon-home"> SANDY
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            SANDY
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-the-tests">Running the tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#data-and-covariances-are-in-the-same-file">Data and covariances are in the same file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#perturb-only-one-or-few-data-types">Perturb only one or few data types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-and-covariances-are-in-different-files">Data and covariances are in different files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#covariance-data-in-errorr-format">Covariance data in ERRORR format</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="endf6.html">The ENDF-6 format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theory.html">Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uncertainty_propagation.html">Uncertainty propagation</a></li>
@@ -102,79 +50,41 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">Ptyhon API for nuclear data files</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">SANDY</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Getting started</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting started</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="getting-started">
-<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
 <p>These instructions will get you a copy of the project up and running on your
 local machine for development and testing purposes.</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">SANDY works with files in ENDF-6 format.
+<p class="admonition-title">Important</p>
+<p>SANDY works with files in ENDF-6 format.
 If you are not familiar with the format, have a look at the <a class="reference external" href="https://www.oecd-nea.org/dbdata/data/manual-endf/endf102.pdf">ENDF-6</a> documentation.</p>
 </div>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
 <p>SANDY is developed in <code class="docutils literal notranslate"><span class="pre">python3.6</span></code> and does not support <code class="docutils literal notranslate"><span class="pre">python2</span></code>.
 In order to run SANDY, make sure that you have a version of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&gt;=</span> <span class="pre">3.6</span></code> installed.
 In file <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> you can find the python dependencies required to ensure
@@ -182,23 +92,23 @@ the correct functioning of SANDY.</p>
 <p>To read and write ENDF-6 formatted files, SANDY uses some fortran routines.
 Make sure that you have a valid fortran compiler installed.</p>
 <p>SANDY has been developed and tested on a Ubuntu machine.</p>
-</div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
 <p>To download SANDY, move to the folder where you want the source code and type</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">luca</span><span class="o">-</span><span class="n">fiorito</span><span class="o">-</span><span class="mi">11</span><span class="o">/</span><span class="n">sandy</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/luca-fiorito-11/sandy.git
 </pre></div>
 </div>
 <p>To install SANDY, run the following commands</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">sandy</span>
-<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>sandy
+python<span class="w"> </span>setup.py<span class="w"> </span>install
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-the-tests">
-<h2>Running the tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-the-tests">
+<h2>Running the tests<a class="headerlink" href="#running-the-tests" title="Permalink to this heading"></a></h2>
 <p>Once the installation is completed, run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to automatically start SANDY’s tests</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest
 </pre></div>
 </div>
 <p>More <a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a> command line options can be added to customize the tests set.</p>
@@ -207,19 +117,19 @@ of data types that the code can process.
 Their purpose is to check the correct functioning of each basic SANDY unit, as
 well as to ensure that the implemented physics is correct.</p>
 <p>For a list of the existing SANDY test, type</p>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span>  <span class="o">--</span><span class="n">collect</span><span class="o">-</span><span class="n">only</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span>  <span class="o">--</span><span class="n">collect</span><span class="o">-</span><span class="n">only</span>
 </pre></div>
 </div>
 <p>Each name has a self-explanatory name for the function it performs.</p>
-</div>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>For an overview of SANDY’s usage type</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sandy</span>  <span class="o">--</span><span class="n">help</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sandy<span class="w">  </span>--help
 </pre></div>
 </div>
 <p>The code will print out the following message:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sandy</span><span class="o">.</span><span class="n">sampling</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">cov</span> <span class="n">COV</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">samples</span> <span class="n">SAMPLES</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sandy</span><span class="o">.</span><span class="n">sampling</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">cov</span> <span class="n">COV</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">samples</span> <span class="n">SAMPLES</span><span class="p">]</span>
                                 <span class="p">[</span><span class="o">--</span><span class="n">outdir</span> <span class="n">DIR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">processes</span> <span class="n">PROCESSES</span><span class="p">]</span>
                                 <span class="p">[</span><span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">polynomial</span> <span class="n">MAX_POLYNOMIAL</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">eig</span> <span class="n">N</span><span class="p">]</span>
                                 <span class="p">[</span><span class="o">--</span><span class="n">mat</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="o">..</span><span class="p">,</span><span class="mi">9999</span><span class="p">}</span> <span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="o">..</span><span class="p">,</span><span class="mi">9999</span><span class="p">}</span> <span class="o">...</span><span class="p">]]</span>
@@ -267,83 +177,78 @@ well as to ensure that the implemented physics is correct.</p>
   <span class="o">--</span><span class="n">debug</span>               <span class="n">turn</span> <span class="n">on</span> <span class="n">debug</span> <span class="n">mode</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="data-and-covariances-are-in-the-same-file">
-<h3>Data and covariances are in the same file<a class="headerlink" href="#data-and-covariances-are-in-the-same-file" title="Permalink to this headline">¶</a></h3>
-<p>Produce 1000 perturbed copies of a ENDF-6 file <code class="code bash docutils literal notranslate"><span class="pre">&lt;tape&gt;</span></code> that contains both
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<section id="data-and-covariances-are-in-the-same-file">
+<h3>Data and covariances are in the same file<a class="headerlink" href="#data-and-covariances-are-in-the-same-file" title="Permalink to this heading"></a></h3>
+<p>Produce 1000 perturbed copies of a ENDF-6 file <code class="code highlight bash docutils literal highlight-bash">&lt;tape&gt;</code> that contains both
 evaluated data and covariances.</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sandy</span>  <span class="o">&lt;</span><span class="n">tape</span><span class="o">&gt;</span>  <span class="o">--</span><span class="n">samples</span> <span class="mi">1000</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sandy<span class="w">  </span>&lt;tape&gt;<span class="w">  </span>--samples<span class="w"> </span><span class="m">1000</span>
 </pre></div>
 </div>
 <p>Below are reported the ENDF-6 data sections that will be perturbed and the
 respective covariance sections.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="41%" />
-<col width="24%" />
-<col width="34%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Data type</th>
-<th class="head">Data section</th>
-<th class="head">Covariance section</th>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data type</p></th>
+<th class="head"><p>Data section</p></th>
+<th class="head"><p>Covariance section</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>fission multiplicities</td>
-<td>MF1</td>
-<td>MF31</td>
+<tbody>
+<tr class="row-even"><td><p>fission multiplicities</p></td>
+<td><p>MF1</p></td>
+<td><p>MF31</p></td>
 </tr>
-<tr class="row-odd"><td>cross sections</td>
-<td>MF3</td>
-<td>MF33</td>
+<tr class="row-odd"><td><p>cross sections</p></td>
+<td><p>MF3</p></td>
+<td><p>MF33</p></td>
 </tr>
-<tr class="row-even"><td>angular ditributions</td>
-<td>MF4</td>
-<td>MF34</td>
+<tr class="row-even"><td><p>angular ditributions</p></td>
+<td><p>MF4</p></td>
+<td><p>MF34</p></td>
 </tr>
-<tr class="row-odd"><td>energy distributions</td>
-<td>MF5</td>
-<td>MF35</td>
+<tr class="row-odd"><td><p>energy distributions</p></td>
+<td><p>MF5</p></td>
+<td><p>MF35</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">cross sections will be perturbed <strong>only</strong> if they are linearized
+<p class="admonition-title">Important</p>
+<p>cross sections will be perturbed <strong>only</strong> if they are linearized
 and given in PENDF (pointwise-ENDF) format.
 To convert a ENDF-6 file into PENDF format, you can use nuclear data processing
 codes such as <a class="reference external" href="http://www.njoy21.io/NJOY2016/">NJOY</a> or <a class="reference external" href="https://www-nds.iaea.org/public/endf/prepro/">PREPRO</a>.</p>
 </div>
-</div>
-<div class="section" id="perturb-only-one-or-few-data-types">
-<h3>Perturb only one or few data types<a class="headerlink" href="#perturb-only-one-or-few-data-types" title="Permalink to this headline">¶</a></h3>
-<p>Add keyword option <code class="code bash docutils literal notranslate"><span class="pre">--mf</span></code> to perturb only few data types.
-For example, to produce 1000 perturbed copies of a file <code class="code bash docutils literal notranslate"><span class="pre">&lt;tape&gt;</span></code> where
+</section>
+<section id="perturb-only-one-or-few-data-types">
+<h3>Perturb only one or few data types<a class="headerlink" href="#perturb-only-one-or-few-data-types" title="Permalink to this heading"></a></h3>
+<p>Add keyword option <code class="code highlight bash docutils literal highlight-bash">--mf</code> to perturb only few data types.
+For example, to produce 1000 perturbed copies of a file <code class="code highlight bash docutils literal highlight-bash">&lt;tape&gt;</code> where
 only angular and energy distributions are perturbed, type</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sandy</span>  <span class="o">&lt;</span><span class="n">tape</span><span class="o">&gt;</span>  <span class="o">--</span><span class="n">samples</span> <span class="mi">1000</span>  <span class="o">--</span><span class="n">mf</span> <span class="mi">34</span> <span class="mi">35</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sandy<span class="w">  </span>&lt;tape&gt;<span class="w">  </span>--samples<span class="w"> </span><span class="m">1000</span><span class="w">  </span>--mf<span class="w"> </span><span class="m">34</span><span class="w"> </span><span class="m">35</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="data-and-covariances-are-in-different-files">
-<h3>Data and covariances are in different files<a class="headerlink" href="#data-and-covariances-are-in-different-files" title="Permalink to this headline">¶</a></h3>
-<p>Produce 1000 perturbed copies of a file <code class="code bash docutils literal notranslate"><span class="pre">&lt;tape&gt;</span></code> that contains evaluated
-data using covariances from file <code class="code bash docutils literal notranslate"><span class="pre">&lt;covtape&gt;</span></code>.</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sandy</span>  <span class="o">&lt;</span><span class="n">tape</span><span class="o">&gt;</span>  <span class="o">--</span><span class="n">cov</span> <span class="o">&lt;</span><span class="n">covtape</span><span class="o">&gt;</span>  <span class="o">--</span><span class="n">samples</span> <span class="mi">1000</span>
+</section>
+<section id="data-and-covariances-are-in-different-files">
+<h3>Data and covariances are in different files<a class="headerlink" href="#data-and-covariances-are-in-different-files" title="Permalink to this heading"></a></h3>
+<p>Produce 1000 perturbed copies of a file <code class="code highlight bash docutils literal highlight-bash">&lt;tape&gt;</code> that contains evaluated
+data using covariances from file <code class="code highlight bash docutils literal highlight-bash">&lt;covtape&gt;</code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sandy<span class="w">  </span>&lt;tape&gt;<span class="w">  </span>--cov<span class="w"> </span>&lt;covtape&gt;<span class="w">  </span>--samples<span class="w"> </span><span class="m">1000</span>
 </pre></div>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">this command is often used for perturbing cross sections, where
-the linearized data are in a PENDF file <code class="code bash docutils literal notranslate"><span class="pre">&lt;tape&gt;</span></code> that might
+<p class="admonition-title">Important</p>
+<p>this command is often used for perturbing cross sections, where
+the linearized data are in a PENDF file <code class="code highlight bash docutils literal highlight-bash">&lt;tape&gt;</code> that might
 not contain covariances and the covariance data are in the original
-ENDF-6 file <code class="code bash docutils literal notranslate"><span class="pre">&lt;covtape&gt;</span></code>.</p>
+ENDF-6 file <code class="code highlight bash docutils literal highlight-bash">&lt;covtape&gt;</code>.</p>
 </div>
-</div>
-<div class="section" id="covariance-data-in-errorr-format">
-<h3>Covariance data in ERRORR format<a class="headerlink" href="#covariance-data-in-errorr-format" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="covariance-data-in-errorr-format">
+<h3>Covariance data in ERRORR format<a class="headerlink" href="#covariance-data-in-errorr-format" title="Permalink to this heading"></a></h3>
 <p>ERRORR is a <a class="reference external" href="http://www.njoy21.io/NJOY2016/">NJOY</a> module that processes the covariance information present in a
 ENDF-6 file into a given multigroup structure.
 The resulting tabulated covariance is tabulated into an output file with a specific
@@ -351,71 +256,39 @@ ERRORR format.
 Not only does ERRORR process cross section covariances in <code class="docutils literal notranslate"><span class="pre">MF33</span></code>, but it can
 also handle the resonance-resonance covariances in ENDF-6 covariance section
 <code class="docutils literal notranslate"><span class="pre">MF32</span></code>.</p>
-<p>To produce 1000 perturbed copies of a PENDF file <code class="code bash docutils literal notranslate"><span class="pre">&lt;pendf_tape&gt;</span></code> including the
+<p>To produce 1000 perturbed copies of a PENDF file <code class="code highlight bash docutils literal highlight-bash">&lt;pendf_tape&gt;</code> including the
 <code class="docutils literal notranslate"><span class="pre">MF32</span></code>
 covariances for resonance parameters, type</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sandy</span>  <span class="o">&lt;</span><span class="n">pendf_tape</span><span class="o">&gt;</span>  <span class="o">--</span><span class="n">cov</span> <span class="o">&lt;</span><span class="n">errorr_tape</span><span class="o">&gt;</span>  <span class="o">--</span><span class="n">samples</span> <span class="mi">1000</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sandy<span class="w">  </span>&lt;pendf_tape&gt;<span class="w">  </span>--cov<span class="w"> </span>&lt;errorr_tape&gt;<span class="w">  </span>--samples<span class="w"> </span><span class="m">1000</span>
 </pre></div>
 </div>
-<p>where <code class="code bash docutils literal notranslate"><span class="pre">&lt;errorr_tape&gt;</span></code> is a ERRORR output file.</p>
-</div>
-</div>
-</div>
+<p>where <code class="code highlight bash docutils literal highlight-bash">&lt;errorr_tape&gt;</code> is a ERRORR output file.</p>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="endf6.html" class="btn btn-neutral float-right" title="The ENDF-6 format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="introduction.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2018, Luca Fiorito
-
-    </p>
+    <p>&#169; Copyright 2018, Luca Fiorito.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });

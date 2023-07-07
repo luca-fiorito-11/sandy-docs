@@ -1,87 +1,50 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The ENDF-6 format &mdash; SANDY  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Theory" href="theory.html" />
-    <link rel="prev" title="Getting started" href="installation.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+        <div class="wy-side-nav-search" >
 
           
-            <a href="index.html" class="icon icon-home"> SANDY
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            SANDY
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Getting started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">The ENDF-6 format</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-material-number-mat">The material number (<code class="docutils literal notranslate"><span class="pre">MAT</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#the-data-type-number-mf">The data type number (<code class="docutils literal notranslate"><span class="pre">MF</span></code>)</a></li>
@@ -94,70 +57,32 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">Ptyhon API for nuclear data files</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">SANDY</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>The ENDF-6 format</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">The ENDF-6 format</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/endf6.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="the-endf-6-format">
-<h1>The ENDF-6 format<a class="headerlink" href="#the-endf-6-format" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="the-endf-6-format">
+<h1>The ENDF-6 format<a class="headerlink" href="#the-endf-6-format" title="Permalink to this heading"></a></h1>
 <p>To better understand how SANDY works it is important to have some knowledge
 of the standard format ENDF-6 used to store evaluated data into computer readable
 files.
@@ -181,8 +106,8 @@ The rules to decrypt and process the ENDF-6 format are encoded in
 SANDY, which can read most of the sections of any ENDF-6 file for
 neutron-induced data.</p>
 <p>An overview of the ENDF-6 structure is reported in the following sections.</p>
-<div class="section" id="the-material-number-mat">
-<h2>The material number (<code class="docutils literal notranslate"><span class="pre">MAT</span></code>)<a class="headerlink" href="#the-material-number-mat" title="Permalink to this headline">¶</a></h2>
+<section id="the-material-number-mat">
+<h2>The material number (<code class="docutils literal notranslate"><span class="pre">MAT</span></code>)<a class="headerlink" href="#the-material-number-mat" title="Permalink to this heading"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">ENDF-6</span></code> file is divided into material sections, each defined by a unique material
 number <code class="docutils literal notranslate"><span class="pre">MAT</span></code>.
 A single file can contain nuclear data evaluations for one or many
@@ -191,53 +116,41 @@ Generally, a material correspond to a single nuclide, a natural
 element containing several isotopes, or a mixture of several elements
 such as compounds, alloys or molecules.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Most of the recent ENDF-6 files for neutron-induced data contain only one
+<p class="admonition-title">Note</p>
+<p>Most of the recent ENDF-6 files for neutron-induced data contain only one
 <code class="docutils literal notranslate"><span class="pre">MAT</span></code> number.</p>
 </div>
-</div>
-<div class="section" id="the-data-type-number-mf">
-<h2>The data type number (<code class="docutils literal notranslate"><span class="pre">MF</span></code>)<a class="headerlink" href="#the-data-type-number-mf" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-data-type-number-mf">
+<h2>The data type number (<code class="docutils literal notranslate"><span class="pre">MF</span></code>)<a class="headerlink" href="#the-data-type-number-mf" title="Permalink to this heading"></a></h2>
 <p>For each material, the evaluated nuclear data are provided in sections,
 specified by the section number <code class="docutils literal notranslate"><span class="pre">MF</span></code>.
 Amongst the several <code class="docutils literal notranslate"><span class="pre">MF</span></code> numbers, SANDY can process the following:</p>
 <blockquote>
 <div><ul class="simple">
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MF1</span></code>:</th><td class="field-body">: general information and fission multiplicities;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MF1</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: general information and fission multiplicities;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MF3</span></code>:</th><td class="field-body">: neutron cross sections;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MF3</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: neutron cross sections;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MF4</span></code>:</th><td class="field-body">: angular distributions of secondary particles;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MF4</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: angular distributions of secondary particles;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MF5</span></code>:</th><td class="field-body">: energy distributions of secondary particles;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MF5</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: energy distributions of secondary particles;</p>
+</dd>
+</dl>
 </li>
 </ul>
 </div></blockquote>
@@ -249,188 +162,123 @@ inference of practical reactor applications.
 The covariance <code class="docutils literal notranslate"><span class="pre">MF</span></code> sections processable by SANDY are</p>
 <blockquote>
 <div><ul class="simple">
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MF31</span></code>:</th><td class="field-body">: covariances for the average fission neutron multiplicities;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MF31</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: covariances for the average fission neutron multiplicities;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MF33</span></code>:</th><td class="field-body">: covariances for neutron cross sections;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MF33</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: covariances for neutron cross sections;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MF34</span></code>:</th><td class="field-body">: covariances for angular distributions of secondary particles;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MF34</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: covariances for angular distributions of secondary particles;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MF35</span></code>:</th><td class="field-body">: covariances for energy distributions of secondary particles.</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MF35</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: covariances for energy distributions of secondary particles.</p>
+</dd>
+</dl>
 </li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Each <code class="docutils literal notranslate"><span class="pre">MF</span></code> covariance section contains covariances for the data given in
+<p class="admonition-title">Note</p>
+<p>Each <code class="docutils literal notranslate"><span class="pre">MF</span></code> covariance section contains covariances for the data given in
 section <code class="docutils literal notranslate"><span class="pre">(MF</span> <span class="pre">-</span> <span class="pre">30)</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">MF33</span></code> contains covariances for section <code class="docutils literal notranslate"><span class="pre">MF3</span></code>.</p>
 </div>
-</div>
-<div class="section" id="the-reaction-number-mt">
-<h2>The reaction number (<code class="docutils literal notranslate"><span class="pre">MT</span></code>)<a class="headerlink" href="#the-reaction-number-mt" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-reaction-number-mt">
+<h2>The reaction number (<code class="docutils literal notranslate"><span class="pre">MT</span></code>)<a class="headerlink" href="#the-reaction-number-mt" title="Permalink to this heading"></a></h2>
 <p>Each <code class="docutils literal notranslate"><span class="pre">MF</span></code> section is divided in further subsections identified by the
 reaction number <code class="docutils literal notranslate"><span class="pre">MT</span></code> that uniquely defines a reaction type.
 A list of the most common <code class="docutils literal notranslate"><span class="pre">MT</span></code> numbers for incident neutron reactions follows:</p>
 <blockquote>
 <div><ul class="simple">
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MT1</span></code>:</th><td class="field-body">: total cross section;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MT1</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: total cross section;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MT2</span></code>:</th><td class="field-body">: elastic scattering cross section;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MT2</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: elastic scattering cross section;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MT4</span></code>:</th><td class="field-body">: inelastic scattering cross section;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MT4</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: inelastic scattering cross section;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MT18</span></code>:</th><td class="field-body">: fission cross section;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MT18</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: fission cross section;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MT102</span></code>:</th><td class="field-body">: radiative capture crross section;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MT102</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: radiative capture crross section;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MT452</span></code>:</th><td class="field-body">: total average fission neutron multiplicity;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MT452</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: total average fission neutron multiplicity;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MT455</span></code>:</th><td class="field-body">: delayed average fission neutron multiplicity;</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MT455</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: delayed average fission neutron multiplicity;</p>
+</dd>
+</dl>
 </li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name"><code class="docutils literal notranslate"><span class="pre">MT456</span></code>:</th><td class="field-body">: prompt average fission neutron multiplicity.</td>
-</tr>
-</tbody>
-</table>
+<li><dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">MT456</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>: prompt average fission neutron multiplicity.</p>
+</dd>
+</dl>
 </li>
 </ul>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="theory.html" class="btn btn-neutral float-right" title="Theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="installation.html" class="btn btn-neutral" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="theory.html" class="btn btn-neutral float-right" title="Theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2018, Luca Fiorito
-
-    </p>
+    <p>&#169; Copyright 2018, Luca Fiorito.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });

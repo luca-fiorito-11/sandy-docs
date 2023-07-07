@@ -11,7 +11,6 @@ Welcome to SANDY's documentation!
    :caption: Contents:
 
    introduction
-   installation
    endf6
    theory
    uncertainty_propagation
